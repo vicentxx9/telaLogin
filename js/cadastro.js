@@ -20,7 +20,7 @@ let validConfirmSenha = false
 let msgError = document.querySelector('#msgError')
 let msgSucesso = document.querySelector('#msgSucesso')
 
-/* Label Nome   keyup -> seria como QUE                 arrows function   */
+
 nome.addEventListener('keyup', () => {
     if(nome.value.length <= 3){
         labelNome.setAttribute('style', 'color: red')
@@ -34,7 +34,7 @@ nome.addEventListener('keyup', () => {
         validNome = true
     }    
 })
-/* Label Do Usuario */
+
 usuario.addEventListener('keyup', () => {
     if(usuario.value.length <= 4){
         labelUsuario.setAttribute('style', 'color: red')
@@ -49,7 +49,7 @@ usuario.addEventListener('keyup', () => {
     }    
 })
 
-/* label da Senha */
+
 senha.addEventListener('keyup', () => {
     if(senha.value.length <= 5){
         labelSenha.setAttribute('style', 'color: red')
@@ -64,7 +64,7 @@ senha.addEventListener('keyup', () => {
     }    
 })
 
-/* Validar senha  */
+
 confirmSenha.addEventListener('keyup', () => {
     if(senha.value != confirmSenha.value){
         labelConfirmSenha.setAttribute('style', 'color: red')
@@ -79,17 +79,17 @@ confirmSenha.addEventListener('keyup', () => {
     }    
 })
 
-/*  */
+
 function cadastrar(){
     if(validNome && validUsuario && validSenha && validConfirmSenha){
     
 
-    /* --- usar o local storage  --- */
+   
     let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
     
     listaUser.push(
         {
-            /* variaveis  */
+            
             nomeCad: nome.value,
             userCad: usuario.value,
             senhaCad: senha.value
@@ -97,7 +97,7 @@ function cadastrar(){
     )
 
     localStorage.setItem('listaUser', JSON.stringify(listaUser))
-    /* ---------- //////// -----------*/
+    
 
     msgSucesso.setAttribute('style','display: block')
     msgSucesso.innerHTML = '<strong>Cadastrando Usuário...</strong>'
@@ -105,11 +105,11 @@ function cadastrar(){
     msgError.innerHTML = ''
 
 
-    /* depois de cadastrado ir para pagina de login */
+    
     setTimeout(()=>{
-        window.location.href = 'login.html'
+        window.location.href = 'index.html'
     }, 2000)
-    /* ---------- //////// -----------*/
+    
 
     }else{
        msgError.setAttribute('style','display: block')
@@ -120,7 +120,7 @@ function cadastrar(){
 }
 
 
-/* tela com eyes funcionem  */
+
 
 btn.addEventListener('click', () =>{
     let inputSenha = document.querySelector('#senha')
