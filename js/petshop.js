@@ -2,7 +2,7 @@ let userLogado = JSON.parse(localStorage.getItem('userLogado'))
 
 let logado  = document.querySelector('#logado')
 
-logado.innerHTML = 'Olá ' + userLogado.nome + ' seja bem-vindo PetShop'
+logado.innerHTML = 'Olá ' + userLogado.nome + ' seja bem-vindo ao PetShop'
 
 
 
